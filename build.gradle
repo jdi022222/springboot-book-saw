@@ -1,0 +1,37 @@
+buildscript {
+    // 플러그인 의존성 관리
+    ext {
+        // 전역변수를 생성하고 의존성으로 받겠다는 의미
+        springBootVersion = '2.1.7.RELEASE' // 2.1.7, 2.1.8, 2.1.9 다 괜찮음
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+//아래 4개 모두 필수 플러그인
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+// 스프링부트 의존성을 관리해주기 때문에 꼭 추가해야 함
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.comibird'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+// 기존 코드는 삭제된 명령어를 이용하고 있음
+// 아래를 참고
+// https://velog.io/@g0709-19/Gradle-Could-not-find-method-compile-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
