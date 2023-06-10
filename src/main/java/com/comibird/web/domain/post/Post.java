@@ -2,10 +2,12 @@ package com.comibird.web.domain.post;
 
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity // 코틀린 등의 새 언어로 롬복이 더이상 필요 없을 경우 쉽게 삭제하기 위해 클래스와 가깝게 둠
 public class Post {
