@@ -1,6 +1,7 @@
 package com.comibird.web;
 
 import com.comibird.service.post.PostService;
+import com.comibird.web.dto.PostResponseDto;
 import com.comibird.web.dto.PostSaveRequestDto;
 import com.comibird.web.dto.PostUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +21,10 @@ public class PostApiController {
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostUpdateRequestDto requestDto) {
         return postService.update(id, requestDto);
+    }
+
+    @PutMapping("/api/v1/posts/{id}")
+    public PostResponseDto findById(@PathVariable Long id) {
+        return postService.findById(id);
     }
 }

@@ -1,6 +1,7 @@
 package com.comibird.service.post;
 
 import com.comibird.domain.post.Post;
+import com.comibird.web.dto.PostResponseDto;
 import com.comibird.web.dto.PostSaveRequestDto;
 import com.comibird.domain.post.PostRepository;
 import com.comibird.web.dto.PostUpdateRequestDto;
@@ -24,5 +25,10 @@ public class PostService {
         Post post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
         post.update(requestDto.getTitle(), requestDto.getContent());
         return id;
+    }
+
+    public PostResponseDto findById(Long id) {
+        Post post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+        return new PostResponseDto(post);
     }
 }
