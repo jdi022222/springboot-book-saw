@@ -23,7 +23,7 @@ public class PostApiController {
         return postService.update(id, requestDto);
     }
 
-    @PutMapping("/api/v1/posts/{id}")
+    @GetMapping("/api/v1/posts/{id}")
     public PostResponseDto findById(@PathVariable Long id) {
         return postService.findById(id);
     }
