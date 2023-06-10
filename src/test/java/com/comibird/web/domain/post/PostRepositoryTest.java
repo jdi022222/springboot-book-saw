@@ -2,18 +2,15 @@ package com.comibird.web.domain.post;
 
 import com.comibird.domain.post.Post;
 import com.comibird.domain.post.PostRepository;
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class PostRepositoryTest {
 
@@ -22,7 +19,7 @@ public class PostRepositoryTest {
 
     // 단위 테스트가 끝날 때마다 수행되는 메서드
     // 여러 테스트 동시 수행시 H2에 데이터가 남아 테스트 실패할 수도 있음
-    @After
+    @AfterEach
     public void cleanUp() {
         postRepository.deleteAll();
     }

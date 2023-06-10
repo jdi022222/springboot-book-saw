@@ -3,25 +3,21 @@ package com.comibird.web;
 import com.comibird.domain.post.Post;
 import com.comibird.domain.post.PostRepository;
 import com.comibird.web.dto.PostSaveRequestDto;
-import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PostApiControllerTest extends TestCase {
+public class PostApiControllerTest {
 
     @LocalServerPort
     private int port;
@@ -32,7 +28,7 @@ public class PostApiControllerTest extends TestCase {
     @Autowired
     private PostRepository postRepository;
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
         postRepository.deleteAll();
     }
