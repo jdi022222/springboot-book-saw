@@ -32,9 +32,10 @@ repositories {
 // 아래를 참고
 // https://velog.io/@g0709-19/Gradle-Could-not-find-method-compile-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compileOnly 'org.projectlombok:lombok:1.18.10'
     // https://github.com/jojoldu/freelec-springboot2-webservice/issues/78
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
