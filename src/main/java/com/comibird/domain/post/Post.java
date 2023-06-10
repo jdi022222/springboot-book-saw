@@ -1,4 +1,4 @@
-package com.comibird.web.domain.post;
+package com.comibird.domain.post;
 
 import lombok.AccessLevel;
 import lombok.Builder;

@@ -1,5 +1,7 @@
 package com.comibird.web.domain.post;
 
+import com.comibird.domain.post.Post;
+import com.comibird.domain.post.PostRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

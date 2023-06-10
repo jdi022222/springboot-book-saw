@@ -1,4 +1,4 @@
-package com.comibird.web.domain.post;
+package com.comibird.domain.post;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
