@@ -1,5 +1,6 @@
 package com.comibird.domain.post;
 
+import com.comibird.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity // 코틀린 등의 새 언어로 롬복이 더이상 필요 없을 경우 쉽게 삭제하기 위해 클래스와 가깝게 둠
-public class Post {
+public class Post extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // spring boot 2.0부터는 identity 옵션이 있어야만 자동 증가
