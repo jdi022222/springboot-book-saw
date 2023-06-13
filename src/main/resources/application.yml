@@ -13,3 +13,5 @@ spring:
     hibernate:
       ddl-auto: create-drop # 시작할 때 새로 생성 하고 세션을 마칠 때 스키마를 소멸 시킵니다. https://shanepark.tistory.com/435
     show-sql: true
+  session:
+    store-type: jdbc
