@@ -38,5 +38,6 @@ dependencies {
     implementation 'org.springframework.session:spring-session-jdbc'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // security 테스트용 도구
     testImplementation 'org.springframework.security:spring-security-test'
 }
